@@ -1,0 +1,138 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: helvetica;
+  font-size: 16px;
+  line-height: 24px;
+  color: #333;
+}
+
+h1{
+  text-align: center;
+}
+
+.contenedor1{
+  background-color: rgb(25, 25, 61);
+  padding: 25px;
+  border-top: 22px rgb(255, 162, 0) solid;
+  text-align: center;
+}
+
+.contenedor1 img{
+  object-fit: cover;
+  width: 210px;
+}
+
+.contenedor2{
+  padding: 25px;
+  padding-bottom: 5px;
+  background-color: rgb(206, 231, 237);
+}
+
+.contenedor2 h1{
+  color: rgb(24, 60, 122);
+}
+
+.vacio{
+  border-bottom: 8px rgb(220, 16, 16) solid;
+  margin: auto;
+  width: 75px;
+}
+
+.contenedor3{
+  border: 3px rgb(30, 67, 132) solid;
+  width: 1320px;
+  border-radius: 20px;
+  margin: auto;
+  padding: 20px;
+  height: 480px;
+}
+
+.contenedor3 h3{
+  text-align: center;
+}
+
+.campos{
+  border-radius: 10px;
+  border: 1px #999 solid;
+  padding: 10px;
+  width: 630px;
+  margin-bottom: 10px;
+}
+
+#Enviar{
+  background-color: rgb(220, 16, 16);
+  color: white;
+  border-radius: 30px;
+  width: 632px;
+  padding: 10px;
+  border: 0px;
+  cursor: pointer;
+}
+
+#Enviar:hover{
+  background-color: white;
+  color:  rgb(220, 16, 16);
+  border-radius: 30px;
+  width: 631px;
+  border: 1px rgb(220, 16, 16) solid !important;
+  padding: 10px;
+  border: 0px;
+}
+
+.contenedor3_1{
+  width: 632px;
+  float: left; 
+}
+
+.contenedor3_2{
+  width: 632px;
+  float: right;
+}
+
+.contenedor3_2 h1{
+  font-size: 21px;
+}
+
+
+.archivo{
+  color: black;
+}
+
+.pdf{
+  object-fit: cover;
+  width: 30px;
+}
+
+.curriculum{
+  color: rgb(30, 67, 132);
+  font-size: 29px;
+  width: 530px;
+}
+
+.curriculum span{
+  font-size: 13px;
+}
+
+input:focus{
+  background-color: rgb(206, 231, 237);
+}
+
+.contenedor4{
+  background-color: rgb(25, 25, 61);
+  color: white;
+  padding: 40px;
+}
+
+.area_interes{
+  cursor: pointer;
+}
+
+.area_interes option{
+  background-color: rgb(227, 242, 245);
+  color: rgb(24, 60, 122);
+}

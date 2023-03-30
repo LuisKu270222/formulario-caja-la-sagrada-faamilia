@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="estilo.css">
+  <script type="text/javascript">
+    function validar_envio(){
+      if(document.contenedorformulario.nombre.value.length==0){
+        alert("Te faltó escribir el NOMBRE")
+        document.contenedorformulario.nombre.focus()
+        return 0;
+      }
+      if(document.contenedorformulario.email.value.length==0){
+        alert("Te faltó escribir el CORREO")
+        document.contenedorformulario.email.focus()
+        return 0;
+      }
+      if(document.contenedorformulario.telefono.value.length==0){
+        alert("Te faltó anexar el número de teléfono")
+        document.contenedorformulario.telefono.focus()
+        return 0;
+      }
+      document.contenedorformulario.submit();
+    }
+  </script>
+  <script type="text/javascript">
+    function validarExt(){
+      var PDF = document.getElementById('PDF');
+      var archivoRuta = PDF.value;
+      var extPermitidas = /(.PDF)$/i;
+    }
+  </script>
+  <script type="text/javascript">
+    function validarExt()
+  {
+      var archivoInput = document.getElementById('archivoInput');
+      var archivoRuta = archivoInput.value;
+      var extPermitidas = /(.pdf)$/i;
+      if(!extPermitidas.exec(archivoRuta)){
+          alert('Asegurese de haber seleccionado un PDF');
+          archivoInput.value = '';
+          return false;
+      }
+      else{
+        if (archivoInput.files && archivoInput.files[0]) 
+          {
+              var visor = new FileReader();
+              visor.onload = function(e) 
+              {
+                  document.getElementById('visorArchivo').innerHTML = 
+                  '<embed src="'+e.target.result+'" width="500" height="375" />';
+              };
+              visor.readAsDataURL(archivoInput.files[0]);
+          }
+      }
+  
+    }
+  </script>
+</head>
+<body>
+  <div class="contenedor1">
+    <img src="imagenes/logo_cabecera.png" alt="">
+  </div>
+  <div class="contenedor2">
+    <h1>DÉJANOS CONOCERTE</h1>
+    <br>
+    <div class="vacio"></div>
+  </div>
+  <br>
+  <div class="contenedor3">
+    <h1>¡Compártenos tu información!</h1>
+    <br>
+    <h3>Dejanos tus datos personales y nosotros nos comuicaremos contigo lo más pronto posible</h3>
+    <div class="contenedor3_1">
+      <form action="enviar.php" method="post" name="contenedorformulario">
+        <input type="text" name="nombre" placeholder="Nombre Completo*" class="campos">
+        <br>
+        <input type="email" name="email" placeholder="Correo Electronico*" class="campos">
+        <br>
+        <input type="tel" name="telefono" placeholder="Celular*" maxlength="10" class="campos">
+        <br>
+        <input type="text" placeholder="Ciudad" class="campos">
+        <br>
+        <input type="text" placeholder="Localidad" class="campos">
+      </div>
+      <div class="contenedor3_2">
+        <input type="text" placeholder="Estado" class="campos Estado">
+      <br>
+      <input type="text" placeholder="Colonia" class="campos columna2">
+      <br>
+      <select class="campos columna2 area_interes" name="" id="">
+        <option value="">Elige tu área de interes</option>
+        <option value="Cajas">Cajas</option>
+        <option value="Servicios">Servicios</option>
+        <option value="Asesoramiento Financiero">Asesoramiento Financiero</option>
+        <option value="Gestoría y Cobranza">Gestoría y Cobranza</option>
+        <option value="Crédito">Crédito</option>
+        <option value="Jurídico">Jurídico</option>
+        <option value="Archivo">Archivo</option>
+        <option value="Mercadotecnia">Mercadotecnia</option>
+        <option value="Diligencias">Diligencias</option>
+        <option value="Compras">Compras</option>
+        <option value="Intendencia">Intendencia</option>
+        <option value="Auditoría">Auditoría</option>
+        <option value="Capital Humano">Capital Humano</option>
+        <option value="Mantenimiento">Mantenimiento</option>
+        <option value="Sistemas">Sistemas</option>
+        <option value="Contabilidad">Contabilidad</option>
+        <option value="Administración">Administración</option>
+      </select>
+      <h1 class="curriculum">Sube tu Curriculum en formato PDF <span>(no exceder de 5 MB)</span><img class="pdf" src="imagenes/icono_pdf.png" alt=""></h1>
+      <br>
+      <input type="file" id="archivoInput" onchange="return validarExt()" />
+
+        <div id="visorArchivo">
+          
+        </div>
+
+        <br><br><br>
+       <input type="button" value="Enviar" id="Enviar" onclick="validar_envio()">
+    </form>
+      </div>      
+  </div>
+  <br><br>
+  <div class="contenedor4">
+    <h1>Luis Emmanuel Ku Pech</h1>
+    <br>
+    <h1>7SA</h1>
+    <br>
+    <h1>Programación Web</h1>
+  </div>
+</body>
+
+</html>
